@@ -1,0 +1,74 @@
+<div class = "container">
+
+    <div class="d-flex justify-content-center">
+        <h3> Random Number Generator </h3>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="d-flex justify-content-center">
+                <button (click) = "generate('now')" class = "btn btn-info"> Generate </button>
+                <button (click) = "generate('random')" class = "btn btn-info ml-2"> Generate with random timestamp </button>
+            </div>
+
+            <table class = "table table-striped">
+              <thead>
+                  <tr>
+                      <th> Number </th>
+                      <th> Timestamp </th>
+                      <th> Action </th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor = "let generatedNumber of generatedNumbers | paginate: { itemsPerPage: 5, currentPage: p }" >
+                      <td> {{ generatedNumber.number }} </td>
+                      <td> {{ generatedNumber.timestamp }} </td>
+                      <td>
+                          <button (click) = "deleteNumber(generatedNumber.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete </button>
+                      </td>
+                  </tr>
+              </tbody>
+              <div class="d-flex justify-content-center">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              </div>
+            </table>
+          </div>
+
+          <div class="col-md-6">
+
+            <form
+                name="form"
+                #f="ngForm"
+                novalidate
+            >
+                <div class="form-group">
+                    <label for="chartCalendar">Filter by date:</label>
+                    <input 
+                        class="form-control" 
+                        placeholder="yyyy-mm-dd" 
+                        name="chartCalendar" 
+                        [(ngModel)]="chartCalendar" 
+                        ngbDatepicker 
+                        #d="ngbDatepicker"
+                        (click)="d.toggle()"
+                        (dateSelect)="generateChart('generate')"
+                        readonly
+                    >
+                </div>
+            </form>
+
+            <div class="chart-wrapper" *ngIf="isDataProcessed">
+                <canvas baseChart 
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [plugins]="barChartPlugins"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType">
+                </canvas>
+            </div>
+
+          </div>
+    </div> 
+</div>
