@@ -7,7 +7,7 @@
   <p align="center">
     A single page app that generates numbers(1-10). The generated numbers populate a table and fill a chart that is filtered by date. It also has a simple integration of Google Analytics to track page view and button clicks.
     <br />
-    <a href="https://youtu.be/fXIFXBLsZwE ">View Quick Demo</a>
+    <a href="https://youtu.be/fXIFXBLsZwE">View Quick Demo</a>
   </p>
 </p>
 
@@ -62,7 +62,7 @@
 
 Your Name - jacobagdaca@gmail.com
 
-Project Link: [https://github.com/jagdaca/random-number-generator](https://github.com/jagdaca/random-number-generator)
+Project Link: [https://github.com/jagdaca/random-number-generator](https://github.com/jagdaca/random-score-generator)
 
 
 
