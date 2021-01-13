@@ -62,7 +62,7 @@
 
 Your Name - jacobagdaca@gmail.com
 
-Project Link: [https://github.com/jagdaca/random-number-generator](https://github.com/jagdaca/random-score-generator)
+Project Link: [https://github.com/jagdaca/random-score-generator](https://github.com/jagdaca/random-score-generator)
 
 
 
